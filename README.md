@@ -4,7 +4,7 @@ A simple command allowing to convert multiple SVG files into a single multi-page
 
 It is mainly based on `librsvg` and therefore, also on `cairo`.
 
-In order to compile it on Debian-based systems, you will need the `librsvg2-dev` package as well as its dependencies. Once done, you can simply execute `make` without parameters.
+In order to compile it on Debian-based systems, you will need the `librsvg2-dev` package as well as its dependencies. You can then simply execute `make` without parameters to compile as binary and then optionally `make install` to make the command available system-wide (copy in `/usr/bin/`).
 
 This tool is more efficient than converting the SVGs into separate PDFs before merging them together as it does not duplicate font subsets.
 

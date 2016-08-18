@@ -69,7 +69,9 @@ main(int argc, char *argv[])
     surface = cairo_pdf_surface_create_for_stream (rsvg_cairo_write_func, output_file, 595.276, 841.89);
     cr = cairo_create(surface);
 
-    for (int i = 1; i < argc - 1; i++) {
+    int i;
+
+    for (i = 1; i < argc - 1; i++) {
         GFile *file;
         GInputStream *stream;
 
