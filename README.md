@@ -20,3 +20,18 @@ The main purpose of this script is to avoid loading duplicate font subsets while
 \includegraphics[page=1]{out.pdf}
 \includegraphics[page=2]{out.pdf}
 ```
+
+Because this syntax using pages makes it hard to figure out which image is being included, an additional `--latex-package` option may be passed to the script in order to generate a LaTeX package that allows for easier integration:
+
+```bash
+svgstopdf 1.svg 2.svg out.pdf --latex-package
+```
+
+This command will generate an additional `out.sty` that you must keep in the same directory as your generated PDF file as well as your LaTeX source files. Your LaTeX code to load the images will now become:
+
+```latex
+\usepackage{svgimages}
+
+\includesvg{1.svg}
+\includesvg{2.svg}
+```
