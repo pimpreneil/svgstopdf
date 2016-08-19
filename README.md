@@ -35,3 +35,9 @@ This command will generate an additional `svgimages.sty` that you must keep in t
 \includesvg{1.svg}
 \includesvg{2.svg}
 ```
+
+You may even pass some `includegraphics`-supported parameters:
+
+```latex
+\includesvg[scale=0.8]{1.svg}
+```

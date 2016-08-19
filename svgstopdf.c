@@ -117,8 +117,8 @@ main(int argc, char *argv[])
         fputs("\\newcommand{\\ifequals}[3]{\\ifthenelse{\\equal{#1}{#2}}{#3}{}}\n", tex_file);
         fputs("\\newcommand{\\case}[2]{#1 #2}\n", tex_file);
         fputs("\\newenvironment{switch}[1]{\\renewcommand{\\case}{\\ifequals{#1}}}{}\n", tex_file);
-        fputs("\\newcommand{\\includesvg}[1]{%\n", tex_file);
-        fputs("    \\begin{switch}{#1}%\n", tex_file);
+        fputs("\\newcommand{\\includesvg}[2][]{%\n", tex_file);
+        fputs("    \\begin{switch}{#2}%\n", tex_file);
     }
 
     /*
@@ -161,7 +161,7 @@ main(int argc, char *argv[])
 
         if (create_latex_package) {
             char* string;
-            asprintf(&string, "        \\case{%s}{\\includegraphics[page=%d]{%s}}%%\n", args[i], i + 1, output);
+            asprintf(&string, "        \\case{%s}{\\includegraphics[#1,page=%d]{%s}}%%\n", args[i], i + 1, output);
             fputs(string, tex_file);
             free(string);
         }
