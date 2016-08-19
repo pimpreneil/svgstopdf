@@ -161,7 +161,7 @@ main(int argc, char *argv[])
 
         if (create_latex_package) {
             char* string;
-            asprintf(&string, "        \\case{%s}{\\includegraphics[page=%d]{%s}}%%\n", args[i], i, output);
+            asprintf(&string, "        \\case{%s}{\\includegraphics[page=%d]{%s}}%%\n", args[i], i + 1, output);
             fputs(string, tex_file);
             free(string);
         }
