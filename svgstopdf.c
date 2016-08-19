@@ -87,7 +87,6 @@ main(int argc, char *argv[])
 
     char* output = args[n_args - 1];
     int outlen = strlen(output);
-    char texoutput[outlen];
     char* point;
 
     if((point = strrchr(output,'.')) != NULL) {
@@ -97,8 +96,6 @@ main(int argc, char *argv[])
         }
     }
 
-    strncpy(texoutput, output, outlen - 3);
-    strcat(texoutput, "sty");
 
     FILE *output_file = fopen(output, "wb");
 
@@ -107,7 +104,7 @@ main(int argc, char *argv[])
         exit(1);
     }
     if(create_latex_package) {
-        tex_file = fopen(texoutput, "wb");
+        tex_file = fopen("svgimages.sty", "wb");
 
         if(!tex_file) {
             g_printerr("Error opening LaTeX output file: %s\n", args[n_args - 1]);

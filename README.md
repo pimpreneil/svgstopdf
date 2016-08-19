@@ -27,7 +27,7 @@ Because this syntax using pages makes it hard to figure out which image is being
 svgstopdf 1.svg 2.svg out.pdf --latex-package
 ```
 
-This command will generate an additional `out.sty` that you must keep in the same directory as your generated PDF file as well as your LaTeX source files. Your LaTeX code to load the images will now become:
+This command will generate an additional `svgimages.sty` that you must keep in the same directory as your generated PDF file as well as your LaTeX source files. Your LaTeX code to load the images will now become:
 
 ```latex
 \usepackage{svgimages}
